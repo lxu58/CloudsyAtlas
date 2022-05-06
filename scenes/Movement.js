@@ -163,18 +163,22 @@ class Movement extends Phaser.Scene {
         // check keyboard input
         if (cursors.left.isDown) {
             this.player.body.setVelocityX(-this.VELOCITY);
+            this.player.body.setVelocityY(0);
             this.player.anims.play('run_left', true);
 
         } else if (cursors.right.isDown) {
             this.player.body.setVelocityX(this.VELOCITY);
+            this.player.body.setVelocityY(0);
             this.player.anims.play('run_right', true);
 
         } else if (cursors.up.isDown) {
             this.player.body.setVelocityY(-this.VELOCITY);
+            this.player.body.setVelocityX(0);
             this.player.anims.play('run_up', true);
 
         } else if (cursors.down.isDown) {
             this.player.body.setVelocityY(this.VELOCITY);
+            this.player.body.setVelocityX(0);
             this.player.anims.play('run_down', true);
         } else if (!cursors.right.isDown && !cursors.left.isDown && !cursors.up.isDown && !cursors.down.isDown) {
             this.player.body.setVelocityX(0);
